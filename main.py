@@ -11,7 +11,7 @@ from constants import TILE_SIZE
 pygame.init()
 textures.reload()
 
-screen = pygame.display.set_mode(DISPLAY_SIZE, pygame.SCALED)
+screen = pygame.display.set_mode(DISPLAY_SIZE, pygame.SCALED, vsync=True)
 pygame.display.set_caption("PyCraft - pre-alpha-" + VERSION)
 clock = pygame.time.Clock()
 delta_time = 0
@@ -86,7 +86,7 @@ while running:
 	player()
 	draw()
 	pygame.display.flip()
-	delta_time = clock.tick()
+	delta_time = clock.tick(60)
 
 pygame.quit()
 exit(0)

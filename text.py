@@ -1,11 +1,12 @@
 from pygame import freetype
 import pygame
+from pathlib import Path
 from pygame import Vector2
 
 freetype.init()
 pygame.font.init()
 
-FONT_PATH = "assets/fonts/minecraft_font.ttf"
+FONT_PATH = Path("assets/fonts/minecraft_font.ttf")
 
 font = pygame.font.Font
 
@@ -15,7 +16,7 @@ def set_font(font_name, size):
 	font = pygame.font.Font(font_name, size)
 
 
-set_font("assets\\fonts\\minecraft_font.ttf", 16)
+set_font(FONT_PATH, 16)
 
 
 def draw(surface, position, text, antialias=False, color=(255, 255, 255), shadow=True):
